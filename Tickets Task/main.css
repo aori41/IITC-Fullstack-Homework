@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#tickets {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ticket {
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+    max-width: 250px;
+}
+
+h1 { 
+    margin: 0px 10px;
+}
+
+.ticket>div {
+    padding: 10px;
+}
