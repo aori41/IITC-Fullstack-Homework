@@ -15,47 +15,47 @@ body {
     background-color: white;
 }
 
-.left {
+#left {
     width: 100%;
 }
 
-.left>img {
+#left>img {
     width: 108%;
     height: 100%;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
-.right {
+#right {
     padding: 8%;
     width: 100%;
     box-sizing: border-box;
 }
 
-.title {
+#title {
     color: gray;
     text-transform: uppercase;
     letter-spacing: 5px;
 }
 
-.description {
+#description {
     color: grey;
     line-height: 1.5em;
     word-spacing: 1px;
 }
 
-.price {
+#price {
     display: flex;
     justify-content: space-around;
 }
 
-.price span:first-child {
+#price span:first-child {
     color: rgb(61, 107, 61);
     font-size: 2em;
     font-weight: 900;
 }
 
-.price span:last-child {
+#price span:last-child {
     color: gray;
     margin-top: 10px;
     text-decoration: line-through;
