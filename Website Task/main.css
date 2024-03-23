@@ -198,6 +198,7 @@ body {
     font-size: 1.3em;
     margin-bottom: 6px;
     color: rgb(240, 240, 240);
+    animation: header-fade 10s ease infinite;
 }
 
 #main-content p {
@@ -281,7 +282,6 @@ body {
 
 .game-ticket:hover {
     transform: scale(1.1);
-    transition: 0.3s all ease-in-out;
     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -542,6 +542,36 @@ body {
         background: -webkit-linear-gradient(315deg, #579828, #DEEA3B);
         background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+}
+
+@keyframes header-fade {
+    0% {
+        color: rgb(202, 42, 42);
+    }
+
+    10% {
+        color: rgb(202, 119, 42);
+    }
+
+    30% {
+        color: rgb(202, 191, 42);
+    }
+
+    50% {
+        color: rgb(154, 202, 42);
+    }
+
+    70% {
+        color: rgb(42, 202, 135);
+    }
+
+    90% {
+        color: rgb(42, 106, 202);
+    }
+
+    100% {
+        color: rgb(202, 42, 42);
     }
 }
 
