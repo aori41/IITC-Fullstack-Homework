@@ -136,30 +136,30 @@ function showBoard(board, ...players) {
     for (let i = 0; i < customBoard.length; i++) console.log(customBoard[i].join());
 }
 
-function is2DLineEqual(board) {
+function is2DLineEqual(array) {
     // Check rows
-    for (let i = 0; i < board.length; i++) {
-        if (board[i].every(e => e === board[i][0] && board[i][0] !== " ")) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].every(e => e === array[i][0] && array[i][0] !== " ")) {
             return true;
         }
     }
 
     // Check columns
-    for (let i = 0; i < board.length; i++) {
-        let column = board.map(row => row[i]);
+    for (let i = 0; i < array.length; i++) {
+        let column = array.map(row => row[i]);
         if (column.every(e => e === column[0] && column[0] !== " ")) {
             return true;
         }
     }
 
     // Check main diagonal
-    let mainDiagonal = board.map((row, i) => row[i]);
+    let mainDiagonal = array.map((row, i) => row[i]);
     if (mainDiagonal.every(e => e === mainDiagonal[0] && mainDiagonal[0] !== " ")) {
         return true;
     }
 
     // Check anti-diagonal
-    let antiDiagonal = board.map((row, i) => row[row.length - 1 - i]);
+    let antiDiagonal = array.map((row, i) => row[row.length - 1 - i]);
     if (antiDiagonal.every(e => e === antiDiagonal[0] && antiDiagonal[0] !== " ")) {
         return true;
     }
