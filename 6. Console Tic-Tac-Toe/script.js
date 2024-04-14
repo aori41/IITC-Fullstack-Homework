@@ -36,7 +36,7 @@ function playerAction() {
         parseInt(position[1] === 0) ||
         position[0] > board.length ||
         position[1] > board[0].length ||
-        board[position[0] - 1][position[1] - 1] !== " ") {
+        board[position[0] - 1][position[1] - 1] !== "_") {
 
         positionId = prompt(`${player1.turn ? player1.name : player2.name}'s turn!\n`
             + `Playing as: ${player1.turn ? player1.symbol : player2.symbol}\n`
@@ -61,7 +61,7 @@ function checkWin() {
     let spaceLeft = false;
     for (let height = 0; height < board.length; height++) {
         for (let width = 0; width < board.length; width++) {
-            if (board[height][width] === " ") {
+            if (board[height][width] === "_") {
                 spaceLeft = true;
                 break;
             }
@@ -103,7 +103,7 @@ function setupBoard() {
     for (let height = 0; height < size; height++) {
         array[height] = [];
         for (let width = 0; width < size; width++) {
-            array[height][width] = " ";
+            array[height][width] = "_";
         }
     }
     return array;
@@ -126,7 +126,7 @@ function showBoard(board, ...players) {
         customBoard[height] = [];
         for (let width = 0; width < size; width++) {
             if (height === 0 && width === 0) {
-                customBoard[height][width] = " ";
+                customBoard[height][width] = "_";
                 continue;
             }
             customBoard[height][width] = (height === 0 || width === 0) ?
@@ -139,7 +139,7 @@ function showBoard(board, ...players) {
 function is2DLinesEqual(array) {
     // Check rows
     for (let i = 0; i < array.length; i++) {
-        if (array[i].every(e => e === array[i][0] && array[i][0] !== " ")) {
+        if (array[i].every(e => e === array[i][0] && array[i][0] !== "_")) {
             return true;
         }
     }
@@ -147,20 +147,20 @@ function is2DLinesEqual(array) {
     // Check columns
     for (let i = 0; i < array.length; i++) {
         let column = array.map(row => row[i]);
-        if (column.every(e => e === column[0] && column[0] !== " ")) {
+        if (column.every(e => e === column[0] && column[0] !== "_")) {
             return true;
         }
     }
 
     // Check main diagonal
     let mainDiagonal = array.map((row, i) => row[i]);
-    if (mainDiagonal.every(e => e === mainDiagonal[0] && mainDiagonal[0] !== " ")) {
+    if (mainDiagonal.every(e => e === mainDiagonal[0] && mainDiagonal[0] !== "_")) {
         return true;
     }
 
     // Check anti-diagonal
     let antiDiagonal = array.map((row, i) => row[row.length - 1 - i]);
-    if (antiDiagonal.every(e => e === antiDiagonal[0] && antiDiagonal[0] !== " ")) {
+    if (antiDiagonal.every(e => e === antiDiagonal[0] && antiDiagonal[0] !== "_")) {
         return true;
     }
     return false;
