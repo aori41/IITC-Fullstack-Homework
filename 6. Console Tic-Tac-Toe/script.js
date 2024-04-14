@@ -120,7 +120,7 @@ function showBoard(board, ...players) {
 
     let size = board.length + 1;
 
-    let customBoard = []; // add coords to default board
+    let customBoard = []; // create custom board with coords
 
     for (let height = 0; height < size; height++) {
         customBoard[height] = [];
