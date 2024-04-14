@@ -52,7 +52,7 @@ function playerAction() {
 }
 
 function checkWin() {
-    let win = is2DLineEqual(board);
+    let win = is2DLinesEqual(board);
     if (win) {
         alert(`Winner is ${player1.turn ? player1.name : player2.name}`);
         return setupGame();
@@ -136,7 +136,7 @@ function showBoard(board, ...players) {
     for (let i = 0; i < customBoard.length; i++) console.log(customBoard[i].join());
 }
 
-function is2DLineEqual(array) {
+function is2DLinesEqual(array) {
     // Check rows
     for (let i = 0; i < array.length; i++) {
         if (array[i].every(e => e === array[i][0] && array[i][0] !== " ")) {
