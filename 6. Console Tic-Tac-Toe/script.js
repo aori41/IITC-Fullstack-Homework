@@ -21,7 +21,13 @@ function setupGame() {
     board = setupBoard();
 
     printBoard(board, player1, player2);
-    playerAction();
+
+    while (!checkEndGame()) {
+        playerAction();
+        player1.turn = !player1.turn;
+        player2.turn = !player2.turn;
+    }
+    setupGame();
 }
 
 function playerAction() {
@@ -48,14 +54,13 @@ function playerAction() {
     board[position[0] - 1][position[1] - 1] = player1.turn ? player1.symbol : player2.symbol;
 
     printBoard(board, player1, player2);
-    checkWin();
 }
 
-function checkWin() {
+function checkEndGame() {
     let win = is2DLinesEqual(board);
     if (win) {
-        alert(`${player1.turn ? player1.name : player2.name} is the Winner!`);
-        return setupGame();
+        alert(`${player1.turn ? player2.name : player1.name} is the Winner!`);
+        return true;
     }
 
     let spaceLeft = false;
@@ -70,14 +75,9 @@ function checkWin() {
 
     if (!spaceLeft) {
         alert("It's a Draw!");
-        return setupGame();
+        return true;
     }
-
-    // switch turns
-    player1.turn = !player1.turn;
-    player2.turn = !player2.turn;
-
-    playerAction();
+    return false;
 }
 
 function getPlayerName() {
