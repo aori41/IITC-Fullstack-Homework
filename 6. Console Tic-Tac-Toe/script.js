@@ -20,7 +20,7 @@ function setupGame() {
 
     board = setupBoard();
 
-    showBoard(board, player1, player2);
+    printBoard(board, player1, player2);
     playerAction();
 }
 
@@ -47,7 +47,7 @@ function playerAction() {
     }
     board[position[0] - 1][position[1] - 1] = player1.turn ? player1.symbol : player2.symbol;
 
-    showBoard(board, player1, player2);
+    printBoard(board, player1, player2);
     checkWin();
 }
 
@@ -109,7 +109,7 @@ function setupBoard() {
     return array;
 }
 
-function showBoard(board, ...players) {
+function printBoard(board, ...players) {
     console.clear();
 
     let playersMsg = "";
