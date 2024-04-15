@@ -92,8 +92,9 @@ function getPlayerName() {
 function setupBoard() {
     let boardSize = undefined;
 
-    while (!parseInt(boardSize) || parseInt(boardSize) < 3) {
-        boardSize = prompt("Please enter board width and length"); // boardSize * boardSize
+    while (!parseInt(boardSize) || parseInt(boardSize) < 3 || parseInt(boardSize) > 15) {
+        boardSize = prompt("Please enter board width and length\n"
+            + "Write a number between 3-15"); // boardSize * boardSize
     }
 
     let size = parseInt(boardSize);
