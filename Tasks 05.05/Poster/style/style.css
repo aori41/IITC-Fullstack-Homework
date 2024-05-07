@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+    font-size: 6vw;
+}
+
+.border {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 26%;
+}
+
+.top {
+    text-align: center;
+    width: 25%;
+}
